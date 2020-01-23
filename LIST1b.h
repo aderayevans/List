@@ -77,7 +77,7 @@ void READ_LIST(List &L) {
     for (int index = 0; index < amount; index++) {
         std::cout << "/<" << index + 1 << ">: ";
         std::cin >> x;
-        INSERT_LIST(x, 1, L);
+        INSERT_LIST(x, FIRST(L), L);
     }
 }
 void PRINT_LIST(List L) {
