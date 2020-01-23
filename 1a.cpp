@@ -13,11 +13,22 @@ void ARRANGE_LIST(List &L) {
         }
     }
 }
+void ADD_LIST(ElementType x, List &L) {
+    ARRANGE_LIST(L);
+    Position p = ENDLIST(L);
+    for (int index = 0; index < L.Last; index++) {
+        if (x < L.Elements[index]) {
+            p = index + 1;
+            break;
+        }
+    }
+    INSERT_LIST(x, p, L);
+}
 int main() {
     List L;
     MAKENULL_LIST(L);
     READ_LIST(L);
     PRINT_LIST(L);
-    ARRANGE_LIST(L);
+    ADD_LIST(40, L);
     PRINT_LIST(L);
 }
