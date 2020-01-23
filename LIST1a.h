@@ -6,8 +6,10 @@ struct List {
     Position Last;
 };
 void INSERT_LIST(ElementType x, Position p, List &L) {
-    if (L.Last == MaxLength) std::cout << "Failed: MaxLength reached\n";
-    else if ((p > L.Last + 1) || (p <= 0)) std::cout << "Failed: Position out of range\n";
+    if (L.Last == MaxLength)
+        std::cout << "Failed: MaxLength reached\n";
+    else if ((p > L.Last + 1) || (p <= 0))
+        std::cout << "Failed: Position out of range\n";
     else {
         for (int index = L.Last; index > p - 1; index--) {
             L.Elements[index] = L.Elements[index - 1];
@@ -31,7 +33,8 @@ ElementType RETRIEVE(Position p, List L) {
     else return L.Elements[p-1];
 }
 void DELETE_LIST(Position p, List &L) {
-    if ((p > L.Last) || (p <= 0)) std::cout << "Failed: Position out of range\n";
+    if ((p > L.Last) || (p <= 0))
+        std::cout << "Failed: Position out of range\n";
     else
         for (int index = p - 1; index < L.Last - 1; index++) {
             L.Elements[index] = L.Elements[index + 1];
@@ -80,6 +83,7 @@ void READ_LIST(List &L) {
 void PRINT_LIST(List L) {
     std::cout << "List amount: " << L.Last << std::endl;
     for (int index = 0; index < L.Last; index++) {
-        std::cout << "/<" << (index + 1) << ">: " << L.Elements[index] << std::endl;
+        std::cout << "/<" << (index + 1) << ">: "
+        << L.Elements[index] << std::endl;
     }
 }
